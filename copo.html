@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+          text-align: center;
+          padding: 20px;
+        }
+        input {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        button {
+          padding: 10px 20px;
+          font-size: 14px;
+        }
+        #resposta {
+          font-size: 18px;
+          font-weight: bold;
+          margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Digite o número</h1>
+
+    <label for="num1">copo2:</label>
+    <input type="text" id="num1">
+
+    <label for="num2">copo1:</label>
+    <input type="text" id="num2">
+
+    <button id="trocar">trocar</button>
+
+    <script>
+        $(document).ready(function() {
+            $("#trocar").click(function() {
+                var num1 = $("#num1").val();
+                var num2 = $("#num2").val();
+
+                $("#num1").val(num2);
+                $("#num2").val(num1);
+            });
+        });
+    </script>
+</body>
+</html>

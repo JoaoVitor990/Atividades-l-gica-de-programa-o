@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diferença</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+  body {
+  text-align: center;
+  padding: 20px;
+  }
+ #resultado {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    </style>
+  </head>
+  <body>
+    <script>
+    $(document).ready(function() {
+    $("#calcular").click(function() {
+    var num1 = parseFloat($("#num1").val());
+    var num2 = parseFloat($("#num2").val());
+    var resultado = num1 - num2;
+    $("#resultado").text("A diferença é:" +resultado.toFixed(2));
+      });
+    });
+  </script>
+    <input type="number" id="num1">
+    <input type="number" id="num2">
+    <button id="calcular">Calcular</button>
+    <div id="resultado"></div>
+  </body>
+  </html>
+  

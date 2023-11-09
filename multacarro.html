@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multa do carro</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body {
+            text-align: center;
+            padding: 20px;
+        }
+
+        button {
+            text-align: center;
+            padding: 15px;
+            font-size: 10px;
+        }
+
+        #resultado {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        </style>
+</head>
+<body>
+    <h1>Quantoskm/h você estava?</h1>
+    <input type="number" id="velocidade">
+    <button id="calcular">Calcular</button>
+    <div id="resultado"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#calcular").click(function() {
+                var velocidade = parseFloat($("#velocidade").val());
+
+                if(velocidade > 80) {
+                    var multa = 5*velocidade-400
+                    $("#resultado").text("Você foi multado: Infração grave: R$" + multa.toFixed(2));
+                } else {
+                    $("#resultado").text("Você não foi multado.");
+                }
+            });
+        });
+        </script>
+
+    
+</body>
+</html>

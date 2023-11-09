@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verificação de média</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <style>
+    body {
+      text-align: center;
+      padding: 20px;
+    }
+    input {
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 14px;
+    }
+    #message {
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Verificação de Média</h1>
+  <label for="nota1">Nota 1:</label>
+  <input type="number" id="nota1" min="0" max="10" step="0.01"><br>
+  <label for="nota2">Nota 2:</label>
+  <input type="number" id="nota2" min="0" max="10" step="0.01"><br>
+  <label for="nota3">Nota 3:</label>
+  <input type="number" id="nota3" min="0" max="10" step="0.01"><br>
+  <label for="nota4">Nota 4:</label>
+  <input type="number" id="nota4" min="0" max="10" step="0.01"><br>
+  <button id="calcular">Calcular Média</button>
+  <div id="resposta"></div>
+
+  <script>
+    $(document).ready(function() {
+      $("#calcular").click(function() {
+        var nota1 = parseFloat($("#nota1").val());
+        var nota2 = parseFloat($("#nota2").val());
+        var nota3 = parseFloat($("#nota3").val());
+        var nota4 = parseFloat($("#nota4").val());
+
+        var media = (nota1 + nota2 + nota3 + nota4) / 4;
+
+        if (media >= 7) {
+          $("#resposta").text("Aprovado! Média Final: " + media.toFixed(2));
+        } else {
+          $("#resposta").text("Reprovado! Média Final: " + media.toFixed(2));
+        }
+      });
+    });
+  </script>
+</body>
+</html>

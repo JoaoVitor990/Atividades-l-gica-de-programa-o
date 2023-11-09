@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+            $("#click").click(function() {
+                var num = 5;
+                var resp = num * 5;
+               
+                for (var i = 0; i <= 10; i++) {
+                    resp += num;
+                }
+                
+                alert(resp);
+
+                // Agregado para mostrar cada valor en un ciclo
+                var result = "";
+                for (var i = 0; i <= 10; i++) {
+                    result += num + " * " + i + " = " + (num * i) + "\n";
+                }
+                alert(result);
+            });       
+        });
+    </script>
+</head>
+<body>
+    <button id="click">testar</button>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<html>
+<head>
+  <title>Formulário com jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h2>liçao logica</h2>
+
+<input type="text" id="numero" placeholder="Insira um número">
+<button id="add">Add</button>
+<button id="todas">Todas</button>
+<button id="pares">Pares</button>
+<button id="impares">Ímpares</button>
+
+<script>
+  var numeros = [];
+
+  $("#add").click(function() {
+    var numero1 = parseInt($("#numero").val());
+    numeros.push(numero1);
+    alert("Número " + numero1 + " adicionado com sucesso!");
+    $("#numero").val("");
+  });
+
+  $("#todas").click(function() {
+    if (numeros.length > 0) {
+      alert("Números inseridos: " + numeros.join(", "));
+    } else {
+      alert("Nenhum número foi inserido ainda.");
+    }
+  });
+
+  $("#pares").click(function() {
+    var numerosPares = numeros.filter(function(numero) {
+     return numero % 2 === 0;
+    });
+
+    if (numerosPares.length > 0) {
+      alert("Números pares: " + numerosPares.join(", "));
+    } else {
+      alert("Não há números pares inseridos.");
+    }
+  });
+
+  $("#impares").click(function() {
+    var numerosImpares = numeros.filter(function(numero) {
+       return numero % 2 !== 0;
+    });
+
+    if (numerosImpares.length > 0) {
+      alert("Números ímpares: " + numerosImpares.join(", "));
+    } else {
+      alert("Não há números ímpares inseridos.");
+    }
+  });
+</script>
+
+</body>
+</html>
